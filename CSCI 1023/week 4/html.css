@@ -1,0 +1,31 @@
+.scary {color: red; font-weight: 700; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, serif}
+.important {color: blue; font-weight: 600; font-family: Courier, 'Courier New', Courier, monospace}
+.teal {background-color: teal; color: white;font-weight: 400; font-family: Helvetica, Arial, sans-serif}
+
+.teal::first-letter {
+  font-size: 75px; 
+  color: #ce070778; 
+  font-weight: bold; 
+  margin-right: 0.7em; 
+}
+.peel {background-color: yellow; color: black; font-weight: 300; font-family: 'Times New Roman', Times, serif}
+
+/* unvisited link */
+a:link {
+  color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+  color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+  color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+  color: #0000FF;
+}

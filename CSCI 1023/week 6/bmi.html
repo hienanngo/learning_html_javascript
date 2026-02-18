@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>BMI Calculator</title>
+    <script src="bmi_calc.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calculate Your Body Mass Index!!</h1>
+    <form action method="get" target="_blank">
+
+    <div class="container">
+      <table style="height: 29px;">
+        <tr> 
+          <td>Weight in pounds</td>
+          <td><input type="number" step="1" min="0" name="weight" id="weight"/></td>
+        </tr><br>
+        <tr> 
+          <td>Height in inches</td>
+          <td><input type="number" step="1" min="0" name="height" id="height"/></td>
+</td></tr>
+      </table>
+
+    <button type="button" onclick="display_bmi()">Calculate BMI</button>
+    </form>
+        <hr style="color: black; background-color: black; height: 2px; width: 100%">
+
+    <b style="text-align: center;">Finding:</b>
+    <table style="height: 29px;">
+        <tr> 
+          <td>Your BMI is:</td>
+          <td><input id="bmioutput" readonly></td>
+        </tr><br>
+        <tr> 
+          <td>According to your<br>BMI, you are:</td>
+          <td><input id="categoryoutput" readonly></td>
+</td></tr>
+      </table>
+    </div>
+</body>
+</html>

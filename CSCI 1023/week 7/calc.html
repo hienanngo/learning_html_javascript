@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html> 
+  <head></head> 
+  <body> 
+    <h1>Simple four function calculator</h1>
+      <table> 
+        <tbody> 
+          <tr> 
+            <td>Input arg 1: </td> 
+            <td><input type="text" id="text1" /> </td> 
+            <td>Input arg 2: </td> 
+            <td><input type="text" id="text2" /> </td> 
+            
+          </tr> 
+          
+          <tr> 
+            <td><input type="button" value="+" onclick="func1()" /> <input type="button" value="-" onclick="func2()" /> 
+            <input type="button" value="*" onclick="func3()" /> <input type="button" value="/" onclick="func4()" />  
+          </tr> 
+          <tr> 
+            <td>Output: </td> 
+            <td><input id="output" readonly></td> 
+          </tr> 
+        </tbody> 
+      </table> <script>
+
+function func1()
+{
+  t = text1.value
+  p = text2.value
+  output.value = parseInt(t) + parseInt(p)
+  return output.value
+}
+
+function func2()
+{
+
+  t = text1.value
+  p = text2.value
+  output.value = parseInt(t) - parseInt(p)
+  return output.value
+}
+
+function func3()
+{
+
+  t = text1.value
+  p = text2.value
+  output.value = parseInt(t) * parseInt(p)
+}
+
+function func4()
+{
+
+  t = text1.value
+  p = text2.value
+  output.value = parseInt(t) / parseInt(p)
+  return output.value
+}
+
+</script> </h1>  
+  </body>
+</html>

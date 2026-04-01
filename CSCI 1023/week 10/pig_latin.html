@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html> 
+  <head></head> 
+  <body> 
+    <h1>Translate to Pig Latin</h1>
+      <table> 
+        <tbody> 
+          <tr> 
+            <td>Enter the English word: </td> 
+            <td><input type="text" id="word" /> </td>
+            
+        </tr> <tr>
+            <td>Pig Latin translation: </td> 
+            <td><input type="text" id="translation" readonly /> </td> 
+            
+          </tr> 
+          
+          <tr> 
+            <td><input type="button" value="Translate" onclick="translateWord()" /> </td>
+          </tr> 
+        </tbody> 
+      </table> 
+<script>
+const vowels = "aeiou";
+
+function translateWord()
+{
+    let english = word.value.toLowerCase();
+    let consonants = "";
+    let rest = "";
+    let stillaConsonant = true;
+
+    for (let i=0; i < english.length; i++) {
+        let letter = english[i];
+
+        if (stillaConsonant && vowels.indexOf(letter) == -1) {
+            consonants += letter;
+        }
+        else {
+            stillaConsonant = false;
+            rest += letter;
+        }
+    }
+
+    // build final result AFTER loop
+    if (vowels.indexOf(english[0]) != -1) {
+        result = english + "way";
+    }
+    else {
+        result = rest + consonants + "ay";
+    }
+
+    translation.value = result;
+    return result;
+}
+
+</script>
+  </body>
+</html>

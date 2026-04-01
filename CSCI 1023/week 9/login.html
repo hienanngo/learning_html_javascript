@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html> 
+  <head></head> 
+  <body> 
+    <h1>Restricted entry</h1>
+      <table> 
+        <tbody> 
+          <tr> 
+            <td>Enter your user ID: </td> 
+            <td><input type="text" id="id" /> </td>
+            
+        </tr> <tr>
+            <td>Enter your password: </td> 
+            <td><input type="text" id="password" /> </td> 
+            
+          </tr> 
+          
+          <tr> 
+            <td><input type="button" value="Login" onclick="login()" /> 
+          </tr> 
+          <tr> 
+            
+            <td><input id="output" readonly></td> 
+          </tr> 
+        </tbody> 
+      </table> <script>
+
+let users = {
+    "bunny": "hop123",
+    "kitty": "purr123",
+    "puppy": "bark123",
+    "duck": "quack123",
+    "guppy": "blub123"
+};
+
+function login()
+{
+  id = document.getElementById("id").value
+  password = document.getElementById("password").value
+  if (users[id] === undefined) {
+    output.value = "User ID not found."
+  } else if (users[id] === password) {
+    output.value = "Login successful!"
+  } else {
+    output.value = "Password does not match."
+  }
+}
+
+
+</script> </h1>  
+  </body>
+</html>

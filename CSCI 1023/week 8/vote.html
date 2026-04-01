@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+  <body> 
+    <h1>Get voting!</h1>
+      <table> 
+        <tbody> 
+          <tr> 
+            <td><img src='cat.jpg' width=120 height=80 border=1></td>
+            <td><img src='bunny.jpg' width=120 height=80 border=1></td> 
+            <td><input type="text" id="writein" /> </td> 
+          </tr> 
+            <td>kitty</td>
+            <td>bunny</td>
+            <td>[write in your vote]</td>
+          <tr> 
+            <td><input type="button" value="vote" onclick="func1()" /> </td>
+            <td> <input type="button" value="vote" onclick="func2()" /> </td>
+
+            <td><input type="button" value="vote" onclick="func3()" /> </td>
+          </tr> 
+        </tbody> 
+      </table> 
+     <hr>
+     <h1>election results</h1> 
+        <textarea size="50" style="height: 80px;" id="output" readonly></textarea>
+      <h4>current leader: <input id="leader" readonly></input></h4> 
+      
+
+
+      <script>
+var kitty = 0
+var bunny = 0
+function func1()
+{
+    kitty = kitty + 1
+    showResults();
+    getLeader();
+}
+
+function func2()
+{
+    bunny = bunny + 1
+    showResults();
+    getLeader();
+}
+
+const writeinVotes = {}
+
+function func3()
+{
+  if (writeinVotes[writein.value]) {
+    writeinVotes[writein.value] += 1
+  } else {
+    writeinVotes[writein.value] = 1
+  }
+showResults();
+getLeader();
+}
+
+function showResults()
+{
+      let text = ""
+        text += "kitty: " + kitty + " votes\n"
+        text += "bunny: " + bunny + " votes\n"
+  for (let name in writeinVotes ) {
+    text += name + ": " + writeinVotes[name] + " votes\n"
+  }
+  output.value = text
+    return output.value
+}
+
+function getLeader() {
+  let leadername = "kitty"
+  let leadervotes = kitty
+  if (bunny > kitty) {
+    leadername = "bunny"
+    leadervotes = bunny
+  }
+  for (let name in writeinVotes) {
+    if (writeinVotes[name] > leadervotes) {
+      leadername = name
+      leadervotes = writeinVotes[name]
+    }
+  }
+  leader.value = leadername
+  return leader.value
+}
+
+</script> </h1>  
+  </body>
+</html>

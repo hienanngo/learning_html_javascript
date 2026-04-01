@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+  <body> 
+    <h1>Order your custom 'za!</h1>
+      <table> 
+        <tbody> 
+          <tr> 
+            <td><select size=6 multiple id="IDselect1">
+                <option>hot honey</option>
+                <option>pepperoni</option>
+                <option>pineapple</option>
+                <option>mushrooms</option>
+                <option>sausage</option>
+                <option>green peppers</option>
+        </select></td>
+            <td style="text-align: center;">
+                <input type="button" value="add" onclick="addTopping()" /> <br>
+                <input type="button" value="remove" onclick="removeTopping()" />
+
+
+            </td> 
+            <td><select size=6 multiple id="IDselect2">
+
+        </select></td> 
+          </tr> <tr>
+          <td><input type="button" value="fax order" onclick="fax()" /></td>
+          </tr> 
+
+        </tbody>
+      </table>
+      <script>
+
+function addTopping()
+{
+    let select1 = document.getElementById("IDselect1");
+    let select2 = document.getElementById("IDselect2");
+    for (let i=select1.options.length-1; i >= 0; i--) {
+        if (select1.options[i].selected) {
+            let newOption = document.createElement("option");
+            newOption.text = select1.options[i].text;
+            select2.add(newOption);
+            select1.remove(i);
+        }
+    }
+}
+
+function removeTopping()
+{
+    let select1 = document.getElementById("IDselect1");
+    let select2 = document.getElementById("IDselect2")
+    for (let i=select2.options.length-1; i >= 0; i--) {
+        if (select2.options[i].selected) {
+            let newOption = document.createElement("option");
+            newOption.text = select2.options[i].text;
+            select1.add(newOption);
+            select2.remove(i);
+        }
+    }
+}
+
+function fax()
+{
+    let select2 = document.getElementById("IDselect2")
+    let order = "I would like a pizza with: \n"
+    for (let i=0; i < select2.options.length; i++) {
+        order += "- " + select2.options[i].text + "\n"
+    }
+    alert(order);
+    
+}
+
+</script>
+
+  </body>
+
+</html>
